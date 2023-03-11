@@ -2,7 +2,7 @@
 
 :root {
   font-size: 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   --mw: 1440px;
   --c_point1: #ffad22;
   --c_point2: #ffe72b;
@@ -26,6 +26,7 @@
       rgba(2, 2, 2, 0.5) 75%
     ),
     url(../images/bg.png);
+  /* background-repeat: no-repeat; */
   position: relative;
   overflow: hidden;
   height: 100vh;
@@ -53,6 +54,7 @@
 
 /* header */
 .hd {
+  border: 1px solid red;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -98,14 +100,14 @@ nav {
   transform: translateX(-50%);
 }
 .gnb > li > a {
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: "Do Hyeon", sans-serif;
   font-size: 1.25rem;
   padding: 0.75rem 0 0.5rem;
   color: var(--c_p);
   transition: 0.3s;
 }
 .gnb > li > a::after {
-  content: '';
+  content: "";
   background-color: var(--c_point1);
   width: 0;
   height: 1px;
@@ -145,7 +147,7 @@ nav {
 .person a {
   padding: 0.5rem 1.2rem;
   font-size: 1rem;
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: "Do Hyeon", sans-serif;
   border-radius: 5px;
 }
 .person a:nth-of-type(1) {
@@ -181,7 +183,7 @@ nav {
   height: 30px;
 }
 .ham span {
-  content: '';
+  content: "";
   background-color: var(--c_p);
   width: 100%;
   height: 2px;
@@ -208,8 +210,12 @@ nav {
   }
   .ham {
     display: flex;
+    cursor: pointer;
   }
   .gnb.active {
+    border: 1px solid red;
+    width: 30%;
+    background-color: #00224a80;
     display: block;
     position: absolute;
     top: 100%;
@@ -217,15 +223,15 @@ nav {
   }
   .gnb.active .sub {
     display: none;
+    background-color: #00224a;
+    z-index: 1;
   }
   .gnb.active > li {
+    /* border: 1px solid blue; */
     width: 100%;
   }
-  .gnb.active > li:hover {
-    background-color: transparent;
-  }
   .gnb > li:hover > a::after {
-    width: 80%;
+    width: 50%;
     transform: translateX(-50%);
   }
   .gnb > li > a {
@@ -233,5 +239,9 @@ nav {
   }
   .gnb > li > a::after {
     bottom: 10px;
+  }
+  /* .active li.on .sub */
+  .gnb.active > li > a.on + .sub {
+    display: block;
   }
 }
