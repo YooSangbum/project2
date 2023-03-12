@@ -1,31 +1,23 @@
-/* 반응형 ham버튼 */
-const $gnb = document.querySelector(".gnb");
+const $mobile = document.querySelector(".mobile");
 const $ham = document.querySelector(".ham");
 
 $ham.addEventListener("click", () => {
-  $gnb.classList.toggle("active");
+  $mobile.classList.toggle("on");
   $ham.classList.toggle("on");
 });
 
-/* 반응형 submenu 나오기 */
-const menuList = document.querySelectorAll(".gnb.active > li > a");
-console.log(menuList);
+const $listMenu = document.querySelectorAll(".mobile p");
 
-menuList.forEach((mainmenu) => {
-  mainmenu.addEventListener("click", (e) => {
+$listMenu.forEach(function (button, index) {
+  button.addEventListener("click", function (e) {
     e.preventDefault();
 
-    console.log(e.target);
+    this.classList.toggle("active");
 
-    let eTarget = e.target;
-
-    if (eTarget.classList.contains("on") == false) {
-      menuList.forEach((item) => {
-        item.classList.remove("on");
-      });
-      eTarget.classList.add("on");
-    } else {
-      eTarget.classList.remove("on");
-    }
+    button.forEach(function (button2, index2) {
+      if (index !== index2) {
+        button2.classList.remove("active");
+      }
+    });
   });
 });
