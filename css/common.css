@@ -2,7 +2,7 @@
 
 :root {
   font-size: 16px;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   --mw: 1440px;
   --c_point1: #ffad22;
   --c_point2: #ffe72b;
@@ -29,7 +29,7 @@
   /* background-repeat: no-repeat; */
   position: relative;
   overflow: hidden;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 /* 이용안내 */
@@ -101,14 +101,14 @@ nav {
   transform: translateX(-50%);
 }
 .gnb > li > a {
-  font-family: "Do Hyeon", sans-serif;
+  font-family: 'Do Hyeon', sans-serif;
   font-size: 1.25rem;
   padding: 0.75rem 0 0.5rem;
   color: var(--c_p);
   transition: 0.3s;
 }
 .gnb > li > a::after {
-  content: "";
+  content: '';
   background-color: var(--c_point1);
   width: 0;
   height: 1px;
@@ -151,7 +151,7 @@ nav {
 .person a {
   padding: 0.5rem 1.2rem;
   font-size: 1rem;
-  font-family: "Do Hyeon", sans-serif;
+  font-family: 'Do Hyeon', sans-serif;
   border-radius: 5px;
 }
 .person a:nth-of-type(1) {
@@ -187,7 +187,7 @@ nav {
   height: 30px;
 }
 .ham span {
-  content: "";
+  content: '';
   background-color: var(--c_p);
   width: 100%;
   height: 2px;
@@ -203,13 +203,14 @@ nav {
 }
 
 /* main */
+/* sec1 */
 .sec1_wrap {
   margin-top: 6rem;
   display: flex;
   justify-content: space-between;
 }
 h2 {
-  font-family: "Dongle", sans-serif;
+  font-family: 'Dongle', sans-serif;
   padding: 1rem;
 }
 h2 span {
@@ -235,7 +236,7 @@ h2 span strong {
 }
 .res_btn a {
   color: black;
-  font-family: "Do hyeon", sans-serif;
+  font-family: 'Do hyeon', sans-serif;
   font-weight: 400px;
   border-radius: 1rem;
   margin-bottom: 1rem;
@@ -269,6 +270,71 @@ h2 span strong {
 .btn2 {
   background-color: var(--c_point1);
 }
+
+/* sec2 */
+.sec2 {
+  margin-top: 6rem;
+}
+.sec2_con {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-auto-rows: 250px;
+  gap: 8px;
+}
+.sec2_con > * {
+  border: 3px solid white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.sec2_con h3 {
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 1.5rem;
+  color: var(--c_point2);
+  padding: 0.4rem 1rem;
+  background-color: var(--c_bg);
+}
+
+/* 공지사항 */
+.notice ul {
+  padding: 1.5rem 0;
+}
+.notice li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 1rem;
+}
+.notice li:hover {
+  background-color: #ffe72b80;
+}
+.notice li span {
+  color: var(--c_p);
+  font-size: 0.75rem;
+  line-height: 2.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.notice li span:nth-of-type(1) {
+  width: 60%;
+}
+.notice li span:nth-of-type(2) {
+  width: 25%;
+}
+.notice a {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 팝업존 */
+.popup_zone img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
 @media (max-width: 1000px) {
   nav {
     display: none;
@@ -283,20 +349,25 @@ h2 span strong {
     display: flex;
     cursor: pointer;
   }
+  /* 모바일 메뉴 */
   .mobile {
     display: block;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 120px;
     right: -300px;
     width: 200px;
+    height: 100%;
     transition: 0.3s;
     z-index: 1;
+    background-color: var(--c_bg);
   }
   .mobile.on {
     right: 0;
   }
-  .mobile p {
+  .mobile > li > a {
+    display: block;
     border: 1px solid #00224a;
+    width: 100%;
     font-size: 1rem;
     padding: 0.5rem 1rem;
     text-align: start;
@@ -305,29 +376,29 @@ h2 span strong {
     background-color: #00224a;
     transition: 0.3s;
   }
-  .mobile p.active {
+  .mobile > li > a.active {
     color: var(--c_point1);
   }
   .active,
-  .mobile p:hover {
+  .mobile > li > a:hover {
     color: var(--c_point1);
   }
   .active,
-  .mobile p:hover::after {
+  .mobile > li > a:hover::after {
     color: var(--c_point1);
     transition: 0.3s;
   }
-  .mobile p::after {
-    content: "\002b";
+  .mobile > li > a::after {
+    content: '\002b';
     color: var(--c_p);
     font-weight: bold;
     float: right;
   }
-  .mobile p.active::after {
-    content: "\2212";
+  .mobile > li > a.active::after {
+    content: '\2212';
     color: var(--c_point1);
   }
-  .mobile div {
+  .mobile .sub {
     display: flex;
     flex-direction: column;
     background-color: #284372;
@@ -335,19 +406,20 @@ h2 span strong {
     height: 0;
     overflow: hidden;
     transition: 0.3s;
+    position: relative;
   }
-  .mobile a {
+  .mobile .sub a {
+    display: block;
     padding: 0.5rem 1rem;
     font-size: 0.75rem;
     color: var(--c_p);
   }
-  .mobile a:hover {
+  .mobile .sub a:hover {
     color: var(--c_point1);
     background-color: var(--c_bg);
   }
-  .active + div {
-    display: flex;
-    height: 124px;
+  .mobile .active + .sub {
+    height: auto;
   }
   .sec1_wrap {
     flex-direction: column;
@@ -393,6 +465,16 @@ h2 span strong {
   }
   .guide span {
     line-height: 2;
+  }
+  .mobile {
+    top: 74px;
+  }
+  .sec2 {
+    margin-top: 9rem;
+  }
+  .sec2_con {
+    grid-template-columns: repeat(auto-fit, minmax(307px, 1fr));
+    grid-auto-rows: 215px;
   }
 }
 @media (max-width: 400px) {

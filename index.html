@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>대전 시민 천문대</title>
+    <link rel="stylesheet" href="./css/my_reset.css" />
     <!-- 구글폰트 -->
     <link
       href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Dongle:wght@300;700&family=Inter:wght@500;700&display=swap"
@@ -15,8 +16,17 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="./css/my_reset.css" />
+    <!-- 스와이퍼 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./css/common.css" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
+      defer
+    ></script>
     <script src="./js/common.js" defer></script>
   </head>
   <body>
@@ -37,99 +47,11 @@
           /></a>
         </h1>
         <nav>
-          <ul class="gnb">
-            <li>
-              <a href="#">천문대 소개</a>
-              <ul class="sub">
-                <li><a href="#">인사말</a></li>
-                <li><a href="#">현황 및 조직도</a></li>
-                <li><a href="#">시설안내</a></li>
-                <li><a href="#">찾아오시는 길</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">이용안내</a>
-              <ul class="sub">
-                <li><a href="#">관람안내</a></li>
-                <li><a href="#">특별프로그램</a></li>
-                <li><a href="#">아스트로 갤러리</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">예약마당</a>
-              <ul class="sub">
-                <li><a href="#">관람예약</a></li>
-                <li><a href="#">전시해설예약</a></li>
-                <li><a href="#">특별프로그램 예약</a></li>
-                <li><a href="#">봉사활동예약</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">참여마당</a>
-              <ul class="sub">
-                <li><a href="#">질문과 답변</a></li>
-                <li><a href="#">방문후기</a></li>
-                <li><a href="#">자주하는 질문</a></li>
-                <li><a href="#">봉사활동</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">알림마당</a>
-              <ul class="sub">
-                <li><a href="#">공지사항</a></li>
-                <li><a href="#">홍보자료</a></li>
-                <li><a href="#">천문정보</a></li>
-                <li><a href="#">행사사진</a></li>
-              </ul>
-            </li>
-          </ul>
+          <ul class="gnb"></ul>
         </nav>
-        <ul class="mobile">
-          <li>
-            <p class="">천문대 소개</p>
-            <div>
-              <a href="#">인사말</a>
-              <a href="#">현황 및 조직도</a>
-              <a href="#">시설안내</a>
-              <a href="#">찾아오시는 길</a>
-            </div>
-          </li>
-          <li>
-            <p>이용안내</p>
-            <div>
-              <a href="#">관람안내</a>
-              <a href="#">특별프로그램</a>
-              <a href="#">아스트로 갤러리</a>
-            </div>
-          </li>
-          <li>
-            <p>예약마당</p>
-            <div>
-              <a href="#">관람예약</a>
-              <a href="#">전시해설예약</a>
-              <a href="#">특별프로그램 예약</a>
-              <a href="#">봉사활동예약</a>
-            </div>
-          </li>
-          <li>
-            <p>참여마당</p>
-            <div>
-              <a href="#">질문과 답변</a>
-              <a href="#">방문후기</a>
-              <a href="#">자주하는 질문</a>
-              <a href="#">봉사활동</a>
-            </div>
-          </li>
-          <li>
-            <p>알림마당</p>
-            <div>
-              <a href="#">공지사항</a>
-              <a href="#">홍보자료</a>
-              <a href="#">천문정보</a>
-              <a href="#">행사사진</a>
-            </div>
-          </li>
-        </ul>
+
+        <ul class="mobile"></ul>
+
         <div class="person">
           <a href="#">로그인</a>
           <a href="#">회원가입</a>
@@ -144,7 +66,7 @@
         </div>
       </header>
       <main>
-        <section class="mw">
+        <section class="sec1 mw">
           <div class="sec1_wrap">
             <h2>
               <span
@@ -169,6 +91,86 @@
               </a>
             </div>
           </div>
+        </section>
+        <section class="sec2 mw">
+          <ul class="sec2_con">
+            <li class="notice">
+              <h3>공지사항</h3>
+              <ul>
+                <li>
+                  <span>3월 1일 개관, 2일 휴관합니다.</span>
+                  <span>2023-02-28</span>
+                  <a href="#"></a>
+                </li>
+                <li>
+                  <span>정월대보름 사진 컨테스트 결과</span>
+                  <span>2023-02-21</span>
+                  <a href="#"></a>
+                </li>
+                <li>
+                  <span
+                    >[종료][천제관측회] 3월 2일 금성과 목성이 가진 그것은 같은
+                    역사를 광야에서 꽃이 피고, 사막이다. 두손을 끓는
+                    영락과</span
+                  >
+                  <span>2023-02-16</span>
+                  <a href="#"></a>
+                </li>
+                <li>
+                  <span>[종료]2023 겨울, 봄방학 천문공작교실</span>
+                  <span>2023-02-09</span>
+                  <a href="#"></a>
+                </li>
+                <li>
+                  <span
+                    >[종료][행사]계묘년 첫 보름달에게 비는 역사를 광야에서 꽃이
+                    피고, 사막이다. 두손을 끓는 영락과</span
+                  >
+                  <span>2023-01-29</span>
+                  <a href="#"></a>
+                </li>
+              </ul>
+            </li>
+            <li class="weather">
+              <h3>날씨정보</h3>
+            </li>
+            <li class="popup">
+              <h3>팝업존</h3>
+              <div class="swiper popup_zone">
+                <ul class="swiper-wrapper">
+                  <li class="swiper-slide">
+                    <a href="#"
+                      ><img src="./images/팝업존.png" alt="팝업존"
+                    /></a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="#"
+                      ><img
+                        src="./images/별빛속에 시와 음악회.png"
+                        alt="별빛 속에 시와 음악회"
+                    /></a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="#"
+                      ><img
+                        src="./images/토요 별 음악회.png"
+                        alt="토요 별 음악회"
+                    /></a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="#"
+                      ><img
+                        src="./images/전시해설 프로그램.png"
+                        alt="전시해설프로그램"
+                    /></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="FI">
+              <div></div>
+            </li>
+          </ul>
         </section>
       </main>
     </div>
