@@ -1,6 +1,6 @@
-const $mobile = document.querySelector('.mobile');
-const $gnb = document.querySelector('.gnb');
-const $ham = document.querySelector('.ham');
+const $mobile = document.querySelector(".mobile");
+const $gnb = document.querySelector(".gnb");
+const $ham = document.querySelector(".ham");
 const gnb = `
             <li>
               <a href="#">천문대 소개</a>
@@ -47,15 +47,18 @@ const gnb = `
               </ul>
             </li>
             `;
+
+/* ham 버튼 클릭시 */
 $mobile.innerHTML = gnb;
 $gnb.innerHTML = gnb;
 
-$ham.addEventListener('click', () => {
-  $mobile.classList.toggle('on');
-  $ham.classList.toggle('on');
+$ham.addEventListener("click", () => {
+  $mobile.classList.toggle("on");
+  $ham.classList.toggle("on");
 });
 
-const $listMenu = document.querySelectorAll('.mobile > li > a');
+/* mobile 서브메뉴 등장 */
+const $listMenu = document.querySelectorAll(".mobile > li > a");
 
 // $listMenu.forEach(function (btn) {
 //   btn.addEventListener('click', function (e) {
@@ -73,21 +76,22 @@ const $listMenu = document.querySelectorAll('.mobile > li > a');
 // });
 
 $listMenu.forEach((btn) => {
-  btn.addEventListener('click', function (e) {
+  btn.addEventListener("click", function (e) {
     e.preventDefault();
     let eTarget = e.target;
-    if (!eTarget.classList.contains('active')) {
+    if (!eTarget.classList.contains("active")) {
       $listMenu.forEach((a) => {
-        a.classList.remove('active');
+        a.classList.remove("active");
       });
-      eTarget.classList.add('active');
+      eTarget.classList.add("active");
     } else {
-      eTarget.classList.remove('active');
+      eTarget.classList.remove("active");
     }
   });
 });
 
-var swiper = new Swiper('.popup_zone', {
+/* 팝업존 스와이퍼 */
+var swiper = new Swiper(".popup_zone", {
   spaceBetween: 30,
   centeredSlides: true,
   autoplay: {
@@ -96,3 +100,26 @@ var swiper = new Swiper('.popup_zone', {
   },
   loop: true,
 });
+
+/* 시설안내 */
+const $btns = document.querySelectorAll(".btns button");
+const $imgs = document.querySelector(".imgs");
+
+$btns.forEach((item, i) => {
+  item.addEventListener("click", () => {
+    $imgs.innerHTML = `<img src="./images/image${i + 1}.jpg" alt="" />`;
+    $btns.forEach((a) => {
+      a.classList.remove("on");
+    });
+    $btns[i].classList.add("on");
+  });
+});
+
+// $btns.forEach((item, i) => {
+//   item.addEventListener("cilck", () => {
+//     $btns.forEach((a) => {
+//       a.classList.remove("on");
+//     });
+//     $btns[i].classList.add("on");
+//   });
+// });

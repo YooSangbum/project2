@@ -2,7 +2,7 @@
 
 :root {
   font-size: 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   --mw: 1440px;
   --c_point1: #ffad22;
   --c_point2: #ffe72b;
@@ -101,14 +101,14 @@ nav {
   transform: translateX(-50%);
 }
 .gnb > li > a {
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: "Do Hyeon", sans-serif;
   font-size: 1.25rem;
   padding: 0.75rem 0 0.5rem;
   color: var(--c_p);
   transition: 0.3s;
 }
 .gnb > li > a::after {
-  content: '';
+  content: "";
   background-color: var(--c_point1);
   width: 0;
   height: 1px;
@@ -151,7 +151,7 @@ nav {
 .person a {
   padding: 0.5rem 1.2rem;
   font-size: 1rem;
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: "Do Hyeon", sans-serif;
   border-radius: 5px;
 }
 .person a:nth-of-type(1) {
@@ -187,7 +187,7 @@ nav {
   height: 30px;
 }
 .ham span {
-  content: '';
+  content: "";
   background-color: var(--c_p);
   width: 100%;
   height: 2px;
@@ -210,7 +210,7 @@ nav {
   justify-content: space-between;
 }
 h2 {
-  font-family: 'Dongle', sans-serif;
+  font-family: "Dongle", sans-serif;
   padding: 1rem;
 }
 h2 span {
@@ -236,7 +236,7 @@ h2 span strong {
 }
 .res_btn a {
   color: black;
-  font-family: 'Do hyeon', sans-serif;
+  font-family: "Do hyeon", sans-serif;
   font-weight: 400px;
   border-radius: 1rem;
   margin-bottom: 1rem;
@@ -277,17 +277,16 @@ h2 span strong {
 }
 .sec2_con {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   grid-auto-rows: 250px;
   gap: 8px;
 }
 .sec2_con > * {
-  border: 3px solid white;
   border-radius: 10px;
   overflow: hidden;
 }
 .sec2_con h3 {
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: "Do Hyeon", sans-serif;
   font-size: 1.5rem;
   color: var(--c_point2);
   padding: 0.4rem 1rem;
@@ -297,6 +296,8 @@ h2 span strong {
 /* 공지사항 */
 .notice ul {
   padding: 1.5rem 0;
+  background-color: var(--c_p);
+  border-radius: 0 0 10px 10px;
 }
 .notice li {
   display: flex;
@@ -306,10 +307,10 @@ h2 span strong {
   padding: 0 1rem;
 }
 .notice li:hover {
-  background-color: #ffe72b80;
+  background-color: var(--c_point2);
 }
 .notice li span {
-  color: var(--c_p);
+  color: var(--c_bg);
   font-size: 0.75rem;
   line-height: 2.5;
   overflow: hidden;
@@ -333,8 +334,52 @@ h2 span strong {
 .popup_zone img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+
+/* 시설안내 */
+.btns {
+  display: flex;
+}
+.btns button {
+  border: none;
+  outline: none;
+  border-radius: 10px 10px 0 0;
+  display: block;
+  width: calc(100% / 4);
+  height: 42.78px;
+  background: linear-gradient(270deg, #00224a 52.43%, #1d6495 104.74%);
+  text-align: center;
+  color: var(--c_p);
+  font-family: "Do Hyeon", sans-serif;
+  font-size: 1rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.btns button:hover {
+  background: var(--c_point1);
+  color: var(--c_bg);
+}
+.btns .on {
+  background: var(--c_point1);
+  color: var(--c_bg);
+}
+
+.imgs {
+  position: relative;
+  padding-top: 58%;
+  width: 100%;
+  overflow: hidden;
+}
+.imgs img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   object-fit: fill;
 }
+
+/* 반응형 */
 @media (max-width: 1000px) {
   nav {
     display: none;
@@ -389,13 +434,13 @@ h2 span strong {
     transition: 0.3s;
   }
   .mobile > li > a::after {
-    content: '\002b';
+    content: "\002b";
     color: var(--c_p);
     font-weight: bold;
     float: right;
   }
   .mobile > li > a.active::after {
-    content: '\2212';
+    content: "\2212";
     color: var(--c_point1);
   }
   .mobile .sub {
@@ -449,8 +494,8 @@ h2 span strong {
   }
   .guide {
     width: 100%;
-    position: fixed;
-    top: 45%;
+    position: absolute;
+    top: 29%;
     background-color: var(--c_bg);
   }
   .guide_wrap {
@@ -470,7 +515,7 @@ h2 span strong {
     top: 74px;
   }
   .sec2 {
-    margin-top: 9rem;
+    margin-top: 10rem;
   }
   .sec2_con {
     grid-template-columns: repeat(auto-fit, minmax(307px, 1fr));
