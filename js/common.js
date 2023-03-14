@@ -125,3 +125,70 @@ $btns.forEach((item, i) => {
 //     $btns[i].classList.add("on");
 //   });
 // });
+
+/* 날씨정보 */
+function loadItems() {
+  return fetch(
+    'https://www.7timer.info/bin/api.pl?lon=127.378&lat=36.349&product=civillight&output=json'
+  ) //
+    .then((data) => data.json())
+    .then((json) => json.dataseries);
+}
+
+let today = new Date();
+let year = today.getFullYear();
+let month = today.getMonth() + 1;
+let day = today.getDate();
+
+function displayItems(items) {
+  const con = document.querySelector('.weather_wrap');
+  const info = items[0];
+  let weatherReady = info.weather;
+  let iconImg = '';
+
+  if (weatherReady == 'clear') {
+    iconImg = 'clear';
+  } else if (
+    weatherReady == 'partly cloudy' ||
+    weatherReady == 'cloudy' ||
+    weatherReady == 'very cloudy'
+  ) {
+    iconImg = 'cloudy';
+  } else if (
+    weatherReady == 'light rain or showers' ||
+    weatherReady == 'occasional showers' ||
+    weatherReady == 'isolated showers' ||
+    weatherReady == 'rain'
+  ) {
+    iconImg = 'rain';
+  } else if (
+    weatherReady == 'light or occasional snow' ||
+    weatherReady == 'snow' ||
+    weatherReady == 'mixed'
+  ) {
+    iconImg = 'snow';
+  } else if (weatherReady == 'thunderstorm possible') {
+    iconImg = 'thunderstorm possible';
+  } else if (weatherReady == 'thunderstorm') {
+    iconImg = 'thunderstorm';
+  } else if (weatherReady == 'foggy' || weatherReady == 'widny') {
+    iconImg = 'foggy';
+  }
+
+  con.innerHTML = `
+  <div class="w_left">
+    <p>${year}년 ${month}월 ${day}일</p>
+    <img src="./images/${iconImg}.png" alt=" ${iconImg}" />   
+  </div>
+  <div class="w_right">
+    <p>최고온도: ${info.temp2m.max}</p>
+    <p>최저온도: ${info.temp2m.min}</p>
+  </div>
+  `;
+}
+
+loadItems() //
+  .then((items) => {
+    displayItems(items);
+  })
+  .catch(console.log);
