@@ -85,6 +85,7 @@ nav {
 .gnb > li {
   width: calc(100% / 5);
   position: relative;
+  border-radius: 1rem 1rem 0 0;
 }
 .gnb > li:hover {
   background-color: #00224a80;
@@ -129,6 +130,9 @@ nav {
 .sub li {
   transition: 0.3s;
   background-color: #00224a80;
+}
+.sub li:last-child {
+  border-radius: 0 0 1rem 1rem;
 }
 .sub a {
   transition: 0.3s;
@@ -274,6 +278,14 @@ h2 span strong {
 .sec2 {
   margin-top: 6rem;
   margin-bottom: 6rem;
+  position: relative;
+}
+.sec2 > img {
+  position: absolute;
+  top: -103px;
+  left: 13%;
+  width: 179px;
+  height: 123px;
 }
 .sec2_con {
   display: grid;
@@ -347,6 +359,7 @@ h2 span strong {
 .img_wrap p {
   font-size: 2rem;
   font-family: 'Dongle', sans-serif;
+  padding-top: 0.5rem;
   padding-bottom: 0.2rem;
 }
 .img_wrap img {
@@ -631,7 +644,6 @@ footer {
     display: none;
   }
   .guide {
-    border: 1px solid red;
     width: 100%;
     position: absolute;
     top: 24%;
@@ -661,6 +673,9 @@ footer {
     grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
     grid-auto-rows: 215px;
     gap: 2rem;
+  }
+  .sec2 > img {
+    display: none;
   }
 }
 @media (max-width: 400px) {

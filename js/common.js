@@ -20,9 +20,9 @@ const gnb = `
               </ul>
             </li>
             <li>
-              <a href="#">예약마당</a>
+              <a href="./sub_page.html">예약마당</a>
               <ul class="sub">
-                <li><a href="#">관람예약</a></li>
+                <li><a href="./sub_page.html">관람예약</a></li>
                 <li><a href="#">전시해설예약</a></li>
                 <li><a href="#">특별프로그램 예약</a></li>
                 <li><a href="#">봉사활동예약</a></li>

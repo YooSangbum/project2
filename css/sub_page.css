@@ -1,0 +1,150 @@
+@charset "utf-8";
+
+:root {
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  --mw: 1440px;
+  --c_point1: #ffad22;
+  --c_point2: #ffe72b;
+  --c_bg: #00224a;
+  --c_footer_bg: #284372;
+  --c_grey: #c7c7c7;
+  --c_grey1: #ebe3db;
+  --c_p: #fefffd;
+}
+.mw {
+  max-width: var(--mw);
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+}
+.mw2 {
+  max-width: 720px;
+  width: calc(100% - 2rem);
+  margin: auto;
+}
+.mw3 {
+  max-width: 1200px;
+  width: calc(100% - 2rem);
+  margin: auto;
+}
+
+/* main */
+/* sec1 */
+.sec1 {
+  /* border: 1px solid blue; */
+  margin-top: 3rem;
+}
+.sec1 h2 {
+  /* border: 1px solid red; */
+  padding: 1rem;
+  font-size: 2.25rem;
+  color: var(--c_bg);
+  text-align: center;
+  position: relative;
+}
+.sec1 h2::before {
+  content: '';
+  width: 200px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1px;
+  position: absolute;
+  background-color: var(--c_bg);
+}
+.sec1 h2::after {
+  content: '';
+  width: 200px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1px;
+  position: absolute;
+  background-color: var(--c_bg);
+}
+.btns {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+.btns button {
+  border: 1px solid var(--c_bg);
+  border-radius: 10px;
+  outline: none;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.2rem;
+  color: #000;
+  font-size: 1.25rem;
+  background-color: var(--c_p);
+}
+.btns button.on {
+  background-color: var(--c_bg);
+  color: var(--c_p);
+}
+
+/* 개인 / 단체 선택 */
+.choice {
+  position: relative;
+}
+.choice::after {
+  content: '';
+  background-color: #000;
+  height: 1.2rem;
+  width: 1px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 61px;
+}
+.choice input {
+  border: none;
+  outline: none;
+  background-color: var(--c_p);
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.choice input.on {
+  color: var(--c_point1);
+}
+
+/* 반응형 */
+@media (max-width: 1000px) {
+}
+@media (max-width: 760px) {
+  .sec1 h2 {
+    font-size: 1.5rem;
+  }
+  .btns {
+    padding: 1rem 0;
+  }
+  .btns button {
+    font-size: 1rem;
+  }
+  .choice input {
+    font-size: 1rem;
+  }
+  .choice::after {
+    left: 45px;
+    height: 0.7rem;
+  }
+}
+@media (max-width: 560px) {
+  .sec1 h2 {
+    font-size: 1.2rem;
+  }
+  .btns button {
+    font-size: 0.8rem;
+  }
+  .choice input {
+    font-size: 0.8rem;
+  }
+  .choice::after {
+    left: 39px;
+    height: 0.4;
+  }
+}
+@media (max-width: 400px) {
+}

@@ -1,0 +1,319 @@
+@charset "utf-8";
+
+:root {
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  --mw: 1440px;
+  --c_point1: #ffad22;
+  --c_point2: #ffe72b;
+  --c_bg: #00224a;
+  --c_footer_bg: #284372;
+  --c_grey: #c7c7c7;
+  --c_grey1: #ebe3db;
+  --c_p: #fefffd;
+}
+.mw {
+  max-width: var(--mw);
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+}
+
+/* 이용안내 */
+.guide {
+  background-color: #00224a;
+}
+.guide_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+}
+.guide p {
+  color: var(--c_p);
+  margin-right: 3rem;
+  font-size: 0.875rem;
+}
+.guide span {
+  color: var(--c_point2);
+  font-size: 0.875rem;
+}
+
+/* header */
+.hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.logo {
+  padding: 1rem 0;
+  margin-right: 1rem;
+}
+.logo img {
+  width: 200px;
+}
+nav {
+  flex-grow: 1;
+}
+
+.gnb {
+  display: flex;
+  justify-content: space-around;
+}
+.gnb a {
+  display: block;
+  padding: 0.75rem;
+  text-align: center;
+  color: var(--c_p);
+  white-space: nowrap;
+  font-size: 1rem;
+}
+.gnb > li {
+  width: calc(100% / 5);
+  position: relative;
+  border-radius: 1rem 1rem 0 0;
+}
+.gnb > li:hover {
+  background-color: #00224a;
+}
+.gnb > li:hover > a {
+  color: var(--c_point1);
+}
+.gnb > li:hover .sub {
+  height: 200px;
+}
+.gnb > li:hover > a::after {
+  width: 50%;
+  transform: translateX(-50%);
+}
+.gnb > li > a {
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 1.25rem;
+  padding: 0.75rem 0 0.5rem;
+  color: var(--c_bg);
+  transition: 0.3s;
+}
+.gnb > li > a::after {
+  content: '';
+  background-color: var(--c_point1);
+  width: 0;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+
+.sub {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+  z-index: 1;
+}
+.sub li {
+  transition: 0.3s;
+  background-color: #00224a;
+}
+.sub li:last-child {
+  border-radius: 0 0 1rem 1rem;
+}
+.sub a {
+  transition: 0.3s;
+}
+.sub li:hover {
+  background-color: var(--c_footer_bg);
+}
+.sub li:hover a {
+  color: var(--c_point1);
+}
+.mobile {
+  display: none;
+}
+.person {
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+}
+.person a {
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-family: 'Do Hyeon', sans-serif;
+  border-radius: 5px;
+}
+.person a:nth-of-type(1) {
+  background-color: var(--c_point2);
+  color: var(--c_bg);
+}
+.person a:nth-of-type(1):hover {
+  filter: brightness(0.8);
+}
+.person a:nth-of-type(2) {
+  background-color: var(--c_bg);
+  color: var(--c_point1);
+}
+.person a:nth-of-type(2):hover {
+  filter: brightness(0.8);
+}
+.icon {
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+.icon a {
+  color: var(--c_bg);
+  margin-right: 1.2rem;
+}
+.fa-solid {
+  color: var(--c_bg);
+  font-size: 1.8rem;
+}
+.ham {
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 30px;
+}
+.ham span {
+  content: '';
+  background-color: var(--c_bg);
+  width: 100%;
+  height: 2px;
+}
+.ham.on span:nth-of-type(1) {
+  transform: translate(0, 13.5px) rotate(-45deg);
+}
+.ham.on span:nth-of-type(2) {
+  opacity: 0;
+}
+.ham.on span:nth-of-type(3) {
+  transform: translate(0, -13.5px) rotate(45deg);
+}
+
+@media (max-width: 1000px) {
+  nav {
+    display: none;
+  }
+  .person {
+    display: none;
+  }
+  .icon {
+    display: flex;
+  }
+  .ham {
+    display: flex;
+    cursor: pointer;
+  }
+  /* 모바일 메뉴 */
+  .mobile {
+    display: block;
+    position: fixed;
+    top: 120px;
+    right: -300px;
+    width: 200px;
+    height: 100%;
+    transition: 0.3s;
+    z-index: 1;
+    background-color: var(--c_bg);
+  }
+  .mobile.on {
+    right: 0;
+  }
+  .mobile > li > a {
+    display: block;
+    border: 1px solid #00224a;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    text-align: start;
+    cursor: pointer;
+    color: var(--c_p);
+    background-color: #00224a;
+    transition: 0.3s;
+  }
+  .mobile > li > a.active {
+    color: var(--c_point1);
+  }
+  .active,
+  .mobile > li > a:hover {
+    color: var(--c_point1);
+  }
+  .active,
+  .mobile > li > a:hover::after {
+    color: var(--c_point1);
+    transition: 0.3s;
+  }
+  .mobile > li > a::after {
+    content: '\002b';
+    color: var(--c_p);
+    font-weight: bold;
+    float: right;
+  }
+  .mobile > li > a.active::after {
+    content: '\2212';
+    color: var(--c_point1);
+  }
+  .mobile .sub {
+    display: flex;
+    flex-direction: column;
+    background-color: #284372;
+    /* display: none; */
+    height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+    position: relative;
+  }
+  .mobile .sub a {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    color: var(--c_p);
+  }
+  .mobile .sub a:hover {
+    color: var(--c_point1);
+    background-color: var(--c_bg);
+  }
+  .mobile .active + .sub {
+    height: auto;
+  }
+}
+@media (max-width: 560px) {
+  .logo img {
+    width: 150px;
+  }
+  /* .guide {
+    border: 1px solid red;
+    width: 100%;
+    position: absolute;
+    top: 24%;
+    background-color: var(--c_bg);
+    margin: 2rem 0;
+  }
+  .guide_wrap {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0.5rem 0;
+  }
+  .guide p {
+    margin-right: 0;
+    line-height: 2;
+  }
+  .guide span {
+    line-height: 2;
+  } */
+  .mobile {
+    top: 74px;
+  }
+}
+@media (max-width: 400px) {
+  .guide p {
+    font-size: 0.7rem;
+  }
+  .guide span {
+    font-size: 0.7rem;
+  }
+}
