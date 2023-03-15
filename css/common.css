@@ -338,18 +338,35 @@ h2 span strong {
 }
 .weather_wrap {
   display: flex;
-  flex-direction: column;
-  /* align-items: flex-start; */
   height: calc(100% - 42.78px);
 }
-.weather_wrap p {
-  font-size: 0.875rem;
-  color: #000;
+.img_wrap {
+  width: 50%;
+  padding: 0 1rem;
 }
-.weather_wrap img {
-  border: 1px solid red;
-  width: 180px;
-  height: 160px;
+.img_wrap p {
+  font-size: 2rem;
+  font-family: 'Dongle', sans-serif;
+  padding-bottom: 0.2rem;
+}
+.img_wrap img {
+  width: 100%;
+  height: 60%;
+}
+.p_wrap {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 2rem;
+}
+.p_wrap p {
+  font-family: 'Dongle', sans-serif;
+  font-size: 2rem;
+  text-align: right;
+  padding: 0rem 2rem;
+  color: #000;
 }
 
 /* 팝업존 */
@@ -569,6 +586,9 @@ footer {
   }
 }
 @media (max-width: 760px) {
+  .weather {
+    display: none;
+  }
   .footer_wrap {
     flex-wrap: wrap;
     justify-content: space-between;
@@ -611,10 +631,12 @@ footer {
     display: none;
   }
   .guide {
+    border: 1px solid red;
     width: 100%;
     position: absolute;
     top: 24%;
     background-color: var(--c_bg);
+    margin: 2rem 0;
   }
   .guide_wrap {
     flex-direction: column;
@@ -633,10 +655,10 @@ footer {
     top: 74px;
   }
   .sec2 {
-    margin-top: 17rem;
+    margin-top: 9rem;
   }
   .sec2_con {
-    grid-template-columns: repeat(auto-fill, minmax(307px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
     grid-auto-rows: 215px;
     gap: 2rem;
   }

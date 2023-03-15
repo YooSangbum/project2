@@ -176,15 +176,15 @@ function displayItems(items) {
   }
 
   con.innerHTML = `
-  <div class="w_left">
-    <p>${year}년 ${month}월 ${day}일</p>
-    <img src="./images/${iconImg}.png" alt=" ${iconImg}" />   
-  </div>
-  <div class="w_right">
-    <p>최고온도: ${info.temp2m.max}</p>
-    <p>최저온도: ${info.temp2m.min}</p>
-  </div>
-  `;
+    <div class="img_wrap">
+      <p>${year}년 ${month}월 ${day}일</p>
+      <img src="./images/${iconImg}.png" alt=" ${iconImg}" />
+    </div>
+    <div class="p_wrap">
+      <p>최저온도: ${info.temp2m.min}</p>
+      <p>최고온도: ${info.temp2m.max}</p>
+    </div>
+      `;
 }
 
 loadItems() //
