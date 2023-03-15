@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>달력만들기</title>
+    <link rel="stylesheet" href="./my_reset.css" />
+    <link rel="stylesheet" href="./calendar.css" />
+    <link rel="stylesheet" href="test.css" />
+    <script src="./calendar.js" defer></script>
+  </head>
+  <body>
+    <form action="">
+      <section class="sec">
+        <h2>프로그램 예약하기</h2>
+
+        <div class="calendar"></div>
+        <div class="box2">
+          <h3>프로그램 시간 선택</h3>
+          <div>
+            <input type="button" value="개인예약" class="btn1" />
+            <input type="button" value="단체예약" class="btn2" />
+          </div>
+          <div class="item on person">
+            <p class="title">
+              <span class="t1">선택</span>
+              <span class="t2">구분</span>
+              <span class="t3">시간</span>
+              <span class="t4">예약</span>
+            </p>
+            <ul>
+              <li class="list">
+                <label>
+                  <input type="radio" name="test" disabled />
+                  <span class="t_t1">1</span>
+                  <span class="t_t2">15:10</span>
+                  <span class="t_t3">예약가능</span>
+                </label>
+              </li>
+              <!-- list 반복 -->
+              <li class="list">
+                <label>
+                  <input type="radio" name="test" />
+                  <span class="t_t1">1</span>
+                  <span class="t_t2">15:10</span>
+                  <span class="t_t3">예약가능</span>
+                </label>
+              </li>
+              <li class="list">
+                <label>
+                  <input type="radio" name="test" />
+                  <span class="t_t1">1</span>
+                  <span class="t_t2">15:10</span>
+                  <span class="t_t3">예약가능</span>
+                </label>
+              </li>
+              <li class="list">
+                <label>
+                  <input type="radio" name="test" />
+                  <span class="t_t1">1</span>
+                  <span class="t_t2">15:10</span>
+                  <span class="t_t3">예약가능</span>
+                </label>
+              </li>
+              <li class="list">
+                <label>
+                  <input type="radio" name="test" />
+                  <span class="t_t1">1</span>
+                  <span class="t_t2">15:10</span>
+                  <span class="t_t3">예약가능</span>
+                </label>
+              </li>
+              <!-- list 반복 끝 -->
+            </ul>
+          </div>
+          <div class="iten team">단체예약</div>
+        </div>
+        <div class="box3">
+          <input type="button" value="이전페이지" />
+          <input type="submit" value="예약완료" />
+        </div>
+      </section>
+    </form>
+  </body>
+</html>

@@ -84,10 +84,11 @@
 }
 
 /* 개인 / 단체 선택 */
-.choice {
+.select {
   position: relative;
+  margin-bottom: 1rem;
 }
-.choice::after {
+.select::after {
   content: '';
   background-color: #000;
   height: 1.2rem;
@@ -97,7 +98,7 @@
   transform: translateY(-50%);
   left: 61px;
 }
-.choice input {
+.select input {
   border: none;
   outline: none;
   background-color: var(--c_p);
@@ -106,8 +107,47 @@
   font-weight: bold;
   cursor: pointer;
 }
-.choice input.on {
+.select input.on {
   color: var(--c_point1);
+}
+
+/* 예약과정 ul > li > h3,.con */
+.proc {
+  margin-bottom: 3rem;
+}
+.title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--c_p);
+  background-color: var(--c_footer_bg);
+  padding: 1rem 2rem;
+  border: 1px solid var(--c_p);
+}
+.con {
+  background-color: #c7c7c7;
+  height: 0;
+  transition: 0.5s;
+}
+.title.on {
+  background-color: var(--c_point1);
+  color: var(--c_bg);
+  border: 1px solid var(--c_bg);
+}
+.title.on + .con {
+  height: 500px;
+}
+.con_1 {
+  max-width: 960px;
+  width: calc(100% - 2rem);
+  margin: auto;
+  display: flex;
+  /* justify-content: space-between; */
+}
+.cal {
+  width: 50%;
+}
+.time {
+  width: 50%;
 }
 
 /* 반응형 */
@@ -123,10 +163,10 @@
   .btns button {
     font-size: 1rem;
   }
-  .choice input {
+  .select input {
     font-size: 1rem;
   }
-  .choice::after {
+  .select::after {
     left: 45px;
     height: 0.7rem;
   }
@@ -138,10 +178,10 @@
   .btns button {
     font-size: 0.8rem;
   }
-  .choice input {
+  .select input {
     font-size: 0.8rem;
   }
-  .choice::after {
+  .select::after {
     left: 39px;
     height: 0.4;
   }

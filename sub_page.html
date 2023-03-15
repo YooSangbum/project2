@@ -18,9 +18,11 @@
     />
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/calendar.css" />
     <link rel="stylesheet" href="./css/sub_page.css" />
 
-    <script src="./js/common.js" defer></script>
+    <script src="./js/header.js" defer></script>
+    <script src="./js/calendar.js" defer></script>
   </head>
   <body>
     <div class="wrap">
@@ -72,11 +74,36 @@
             <button>봉사활동예약</button>
           </div>
         </section>
-        <form action="" class="mw3">
-          <div class="choice">
-            <input type="button" value="개인" />
-            <input class="on" type="button" value="단체" />
-          </div>
+        <form action="">
+          <section class="sec2 mw3">
+            <div class="select">
+              <input type="button" value="개인" />
+              <input class="on" type="button" value="단체" />
+            </div>
+            <ul class="proc">
+              <li class="choice choice_1">
+                <h3 class="title on">1. 날짜 및 회차 선택</h3>
+                <div class="con con_1">
+                  <div class="cal">
+                    <span>날짜 선택</span>
+                    <div class="calendar"></div>
+                  </div>
+                  <div class="time">
+                    <span>회차 선택</span>
+                    <div></div>
+                  </div>
+                </div>
+              </li>
+              <li class="choice choice_2">
+                <h3 class="title">2. 인원 선택</h3>
+                <div class="con"></div>
+              </li>
+              <li class="choice choice_3">
+                <h3 class="title">3. 예약자 및 단체정보 입력</h3>
+                <div class="con"></div>
+              </li>
+            </ul>
+          </section>
         </form>
       </main>
       <footer>
