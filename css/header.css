@@ -297,16 +297,18 @@ nav {
     justify-content: center;
     align-items: flex-start;
     padding: 0.5rem 0;
-  }
+  } */
   .guide p {
     margin-right: 0;
     line-height: 2;
+    font-size: 0.7rem;
   }
   .guide span {
     line-height: 2;
-  } */
+    font-size: 0.7rem;
+  }
   .mobile {
-    top: 74px;
+    top: 140px;
   }
 }
 @media (max-width: 400px) {
@@ -315,5 +317,8 @@ nav {
   }
   .guide span {
     font-size: 0.7rem;
+  }
+  .mobile {
+    top: 183px;
   }
 }

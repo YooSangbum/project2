@@ -96,7 +96,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 61px;
+  left: 49px;
 }
 .select input {
   border: none;
@@ -115,6 +115,9 @@
 .proc {
   margin-bottom: 3rem;
 }
+.choice {
+  overflow: hidden;
+}
 .title {
   font-size: 1rem;
   font-weight: bold;
@@ -124,7 +127,7 @@
   border: 1px solid var(--c_p);
 }
 .con {
-  background-color: #c7c7c7;
+  background-color: #ebe3db;
   height: 0;
   transition: 0.5s;
 }
@@ -136,18 +139,71 @@
 .title.on + .con {
   height: 500px;
 }
+/* 예약과정 전체부분 끝 */
+/* con_1 */
+.con > div > span {
+  display: inline-block;
+  margin: 1rem 0 2rem 0;
+}
 .con_1 {
   max-width: 960px;
   width: calc(100% - 2rem);
   margin: auto;
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-evenly;
 }
-.cal {
-  width: 50%;
-}
+.cal,
 .time {
+  border: 1px solid red;
+  max-width: 360px;
   width: 50%;
+  padding: 0 1rem;
+}
+.cal_choiced {
+  color: var(--c_point1);
+  text-align: right;
+  padding: 1rem 0 0.5rem 0;
+  font-size: 0.8rem;
+}
+.time_con span,
+.time_con input {
+  font-size: 0.8rem;
+}
+.time_title {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+.time_title > * {
+  width: 25%;
+  text-align: center;
+}
+.time_list {
+  border-bottom: 1px dotted var(--c_grey);
+}
+.time_list:last-child {
+  border-bottom: 1px solid #000;
+}
+.time_list > label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.6rem 0;
+}
+.time_list label > * {
+  width: 25%;
+  text-align: center;
+}
+.time_list label span:last-child {
+  font-size: 0.7rem;
+  padding: 0.3rem 0;
+  background-color: var(--c_bg);
+  color: var(--c_p);
+  border-radius: 10px;
 }
 
 /* 반응형 */
@@ -167,7 +223,7 @@
     font-size: 1rem;
   }
   .select::after {
-    left: 45px;
+    left: 33px;
     height: 0.7rem;
   }
 }
@@ -177,14 +233,19 @@
   }
   .btns button {
     font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
   }
   .select input {
     font-size: 0.8rem;
   }
   .select::after {
-    left: 39px;
+    left: 26.61px;
     height: 0.4;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 420px) {
+  .btns button {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.5rem;
+  }
 }

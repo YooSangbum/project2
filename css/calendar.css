@@ -12,6 +12,13 @@
   --next-prev-arrow-color: #fff;
   --calendar-border-radius: 16px;
   --calendar-prevnext-date-color: #484848;
+  --c_point1: #ffad22;
+  --c_point2: #ffe72b;
+  --c_bg: #00224a;
+  --c_footer_bg: #284372;
+  --c_grey: #c7c7c7;
+  --c_grey1: #ebe3db;
+  --c_p: #fefffd;
 }
 
 * {
@@ -22,11 +29,11 @@
 .calendar {
   font-family: 'IBM Plex Sans', sans-serif;
   position: relative;
-  /* max-width: 400px; change as per your design need */
-  /* min-width: 320px; */
-  background: var(--calendar-bg-color);
-  color: var(--calendar-font-color);
-  margin: 20px auto;
+  max-width: 300px;
+  min-width: 275px;
+  background: var(--c_p);
+  color: var(--c_bg);
+  margin: 1rem auto;
   box-sizing: border-box;
   overflow: hidden;
   font-weight: normal;
@@ -43,16 +50,21 @@
   text-align: center;
 }
 .calendar .calendar-inner .calendar-body .number-item.on {
-  outline: 2px solid tomato;
+  border: 1px solid var(--c_point1);
+  background-color: var(--c_grey1);
   border-radius: 4px;
 }
 
 .calendar .calendar-inner .calendar-body div {
   padding: 4px;
-  min-height: 30px;
+  min-height: 20px;
   /* line-height: 30px; */
   border: 1px solid transparent;
-  margin: 6px 2px 0px;
+  margin: 4px 2px 0px;
+  font-size: 0.8rem;
+}
+.calendar .calendar-inner .calendar-body div:nth-of-type(1) {
+  color: red;
 }
 
 .calendar .calendar-inner .calendar-body div:nth-child(-n + 7) {
@@ -66,14 +78,15 @@
 }
 
 .calendar .calendar-inner .calendar-body div > a {
-  color: var(--calendar-font-color);
+  color: var(--c_bg);
   text-decoration: none;
   display: flex;
   justify-content: center;
+  font-size: 1rem;
 }
 
 .calendar .calendar-inner .calendar-body div:hover {
-  border: 1px solid var(--calendar-date-hover-color);
+  border: 1px solid var(--c_point1);
   border-radius: 4px;
 }
 
@@ -91,17 +104,18 @@
   text-align: center;
   cursor: pointer;
   margin: 3px 0px;
-  background: var(--calendar-current-date-color);
-  padding: 8px 0px;
+  background: var(--c_grey1);
+  padding: 1px 0px;
   border-radius: 10px;
-  width: 80%;
+  width: 65%;
   margin: auto;
+  font-size: 0.8rem;
 }
 
 .calendar .calendar-inner .calendar-controls .calendar-year-month {
   display: flex;
   min-width: 100px;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
@@ -120,11 +134,11 @@
   .calendar-year-month
   .calendar-month-label {
   font-weight: 500;
-  font-size: 12px;
+  font-size: 1rem;
 }
 
 .calendar .calendar-inner .calendar-body .calendar-today {
-  background: var(--calendar-today-color);
+  background: var(--c_grey);
   border-radius: 4px;
 }
 
@@ -150,18 +164,22 @@
 
 .calendar .calendar-inner .calendar-controls .calendar-next a svg,
 .calendar .calendar-inner .calendar-controls .calendar-prev a svg {
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
 }
 
 .calendar .calendar-inner .calendar-controls .calendar-next a svg path,
 .calendar .calendar-inner .calendar-controls .calendar-prev a svg path {
-  fill: var(--next-prev-arrow-color);
+  fill: var(--c_bg);
 }
 
 .calendar .calendar-inner .calendar-body .prev-dates,
 .calendar .calendar-inner .calendar-body .next-dates {
-  color: var(--calendar-prevnext-date-color);
+  color: var(--c_grey);
+  font-size: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .calendar .calendar-inner .calendar-body .prev-dates:hover,

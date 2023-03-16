@@ -8,20 +8,20 @@ function CalendarControl() {
     localDate: new Date(),
     prevMonthLastDate: null,
     dateToday: null,
-    calWeekDays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    calWeekDays: ['일', '월', '화', '수', '목', '금', '토'],
     calMonthName: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec',
+      '1',
+      '2',
+      '3',
+      '4',
+      '5',
+      '6',
+      '7',
+      '8',
+      '9',
+      '10',
+      '11',
+      '12',
     ],
     daysInMonth: function (month, year) {
       return new Date(year, month, 0).getDate();
@@ -81,28 +81,35 @@ function CalendarControl() {
           calendarControl.calMonthName[calendar.getMonth()]
         } ${calendar.getFullYear()}`
       );
-      document.querySelectorAll('.number-item').forEach((day) => {
-        day.classList.add('on');
-        this.parentNode.classList.add('on');
-      });
+      // document.querySelectorAll('.number-item').forEach((day) => {
+      //   day.classList.add('on');
+      //   this.parentNode.classList.add('on');
+      // });
     },
     plotSelectors: function () {
-      document.querySelector(
-        '.calendar'
-      ).innerHTML += `<div class="calendar-inner"><div class="calendar-controls">
-        <div class="calendar-prev"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><path fill="#666" d="M88.2 3.8L35.8 56.23 28 64l7.8 7.78 52.4 52.4 9.78-7.76L45.58 64l52.4-52.4z"/></svg></a></div>
-        <div class="calendar-year-month">
+      document.querySelector('.calendar').innerHTML += `
+      <div class="calendar-inner">
+        <div class="calendar-controls">
+          <div class="calendar-prev">
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+            <path fill="#666" d="M88.2 3.8L35.8 56.23 28 64l7.8 7.78 52.4 52.4 9.78-7.76L45.58 64l52.4-52.4z"/></svg>
+            </a>
+          </div>
+        <div class="calendar-year-month"> 
+          <div class="calendar-year-label">
+          </div>
+        <div>.</div>
         <div class="calendar-month-label"></div>
-        <div>-</div>
-        <div class="calendar-year-label"></div>
         </div>
         <div class="calendar-next"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><path fill="#666" d="M38.8 124.2l52.4-52.42L99 64l-7.77-7.78-52.4-52.4-9.8 7.77L81.44 64 29 116.42z"/></svg></a></div>
         </div>
-        <div class="calendar-today-date">Today: 
-          ${calendarControl.calWeekDays[calendarControl.localDate.getDay()]}, 
-          ${calendarControl.localDate.getDate()}, 
-          ${calendarControl.calMonthName[calendarControl.localDate.getMonth()]} 
-          ${calendarControl.localDate.getFullYear()}
+        <div class="calendar-today-date">Today :
+          ${
+            calendarControl.calMonthName[calendarControl.localDate.getMonth()]
+          }월
+          ${calendarControl.localDate.getDate()}일 
+          (${calendarControl.calWeekDays[calendarControl.localDate.getDay()]}) 
+         
         </div>
         <div class="calendar-body"></div></div>`;
     },
@@ -236,3 +243,19 @@ function CalendarControl() {
 }
 
 const calendarControl = new CalendarControl();
+
+const $chooseItem = document.querySelectorAll('.number-item');
+$chooseItem.forEach((item) => {
+  item.addEventListener('click', (e) => {
+    const eTarget = e.target.parentNode;
+    console.log(eTarget);
+    if (eTarget.classList.contains('on') == false) {
+      $chooseItem.forEach((a) => {
+        a.classList.remove('on');
+      });
+      eTarget.classList.toggle('on');
+    } else {
+      eTarget.classList.remove('on');
+    }
+  });
+});
