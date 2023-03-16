@@ -50,7 +50,6 @@
   text-align: center;
 }
 .calendar .calendar-inner .calendar-body .number-item.on {
-  border: 1px solid var(--c_point1);
   background-color: var(--c_grey1);
   border-radius: 4px;
 }
@@ -104,7 +103,7 @@
   text-align: center;
   cursor: pointer;
   margin: 3px 0px;
-  background: var(--c_grey1);
+  background: var(--c_grey);
   padding: 1px 0px;
   border-radius: 10px;
   width: 65%;

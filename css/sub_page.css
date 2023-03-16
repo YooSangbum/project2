@@ -128,7 +128,8 @@
 }
 .con {
   background-color: #ebe3db;
-  height: 0;
+  max-height: 0;
+  /* height: 0; */
   transition: 0.5s;
 }
 .title.on {
@@ -137,7 +138,8 @@
   border: 1px solid var(--c_bg);
 }
 .title.on + .con {
-  height: 500px;
+  max-height: 1080px;
+  /* height: 1080px; */
 }
 /* 예약과정 전체부분 끝 */
 /* con_1 */
@@ -151,10 +153,10 @@
   margin: auto;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 .cal,
 .time {
-  border: 1px solid red;
   max-width: 360px;
   width: 50%;
   padding: 0 1rem;
@@ -184,6 +186,9 @@
 .time_list {
   border-bottom: 1px dotted var(--c_grey);
 }
+.time_list > label > input {
+  cursor: pointer;
+}
 .time_list:last-child {
   border-bottom: 1px solid #000;
 }
@@ -205,6 +210,54 @@
   color: var(--c_p);
   border-radius: 10px;
 }
+.con_1 > button,
+.con_2 > button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  padding: 2rem;
+}
+.con_1 > button > span,
+.con_2 > button > span {
+  border-radius: 4px;
+  background-color: var(--c_bg);
+  color: var(--c_p);
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+}
+
+/* con_2 */
+.con_2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.con_2 h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 1rem 0;
+}
+.con_2 ul {
+  padding: 1rem;
+}
+.con_2 li {
+  font-size: 0.75rem;
+  list-style: inside;
+  padding: 0.5rem 1rem;
+}
+.con_2 p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.con_2 input {
+  border: 1px solid #000;
+  border-radius: 5px;
+  outline: none;
+  width: 90px;
+  height: 30px;
+}
 
 /* 반응형 */
 @media (max-width: 1000px) {
@@ -225,6 +278,22 @@
   .select::after {
     left: 33px;
     height: 0.7rem;
+  }
+  .cal,
+  .time {
+    width: 100%;
+  }
+  .con > div > span {
+    margin: 1rem 0 0.5rem 0;
+  }
+  .cal_choiced {
+    padding: 0.5rem 0;
+  }
+  .con_1 > button {
+    padding: 2rem;
+  }
+  .con_1 > button > span {
+    padding: 0.5rem 0.8rem;
   }
 }
 @media (max-width: 560px) {

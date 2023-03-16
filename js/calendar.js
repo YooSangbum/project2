@@ -91,7 +91,7 @@ function CalendarControl() {
       <div class="calendar-inner">
         <div class="calendar-controls">
           <div class="calendar-prev">
-            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+            <a href="#none"><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
             <path fill="#666" d="M88.2 3.8L35.8 56.23 28 64l7.8 7.78 52.4 52.4 9.78-7.76L45.58 64l52.4-52.4z"/></svg>
             </a>
           </div>
@@ -101,7 +101,7 @@ function CalendarControl() {
         <div>.</div>
         <div class="calendar-month-label"></div>
         </div>
-        <div class="calendar-next"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><path fill="#666" d="M38.8 124.2l52.4-52.42L99 64l-7.77-7.78-52.4-52.4-9.8 7.77L81.44 64 29 116.42z"/></svg></a></div>
+        <div class="calendar-next"><a href="#none"><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><path fill="#666" d="M38.8 124.2l52.4-52.42L99 64l-7.77-7.78-52.4-52.4-9.8 7.77L81.44 64 29 116.42z"/></svg></a></div>
         </div>
         <div class="calendar-today-date">Today :
           ${
@@ -146,14 +146,14 @@ function CalendarControl() {
         } else {
           document.querySelector(
             '.calendar .calendar-body'
-          ).innerHTML += `<div class="number-item" data-num=${count}><a class="dateNumber" href="#">${count++}</a></div>`;
+          ).innerHTML += `<div class="number-item" data-num=${count}><a class="dateNumber" href="#none">${count++}</a></div>`;
         }
       }
       //remaining dates after month dates
       for (let j = 0; j < prevDateCount + 1; j++) {
         document.querySelector(
           '.calendar .calendar-body'
-        ).innerHTML += `<div class="number-item" data-num=${count}><a class="dateNumber" href="#">${count++}</a></div>`;
+        ).innerHTML += `<div class="number-item" data-num=${count}><a class="dateNumber" href="#none">${count++}</a></div>`;
       }
       calendarControl.highlightToday();
       calendarControl.plotPrevMonthDates(prevMonthDatesArray);
