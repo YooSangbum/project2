@@ -127,7 +127,7 @@
   border: 1px solid var(--c_p);
 }
 .con {
-  background-color: #ebe3db;
+  background-color: var(--c_grey1);
   max-height: 0;
   /* height: 0; */
   transition: 0.5s;
@@ -138,7 +138,7 @@
   border: 1px solid var(--c_bg);
 }
 .title.on + .con {
-  max-height: 1080px;
+  max-height: 1500px;
   /* height: 1080px; */
 }
 /* 예약과정 전체부분 끝 */
@@ -148,9 +148,10 @@
   margin: 1rem 0 2rem 0;
 }
 .con_1 {
-  max-width: 960px;
-  width: calc(100% - 2rem);
-  margin: auto;
+  /* max-width: 960px; */
+  /* width: calc(100% - 2rem); */
+  /* margin: auto; */
+  padding: 2rem;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -210,16 +211,16 @@
   color: var(--c_p);
   border-radius: 10px;
 }
-.con_1 > button,
-.con_2 > button {
+.complet_btn,
+.complet_btn,
+.complet_btn {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+}
+.complet_btn > input {
   border: none;
   outline: none;
-  background-color: transparent;
-  width: 100%;
-  padding: 2rem;
-}
-.con_1 > button > span,
-.con_2 > button > span {
   border-radius: 4px;
   background-color: var(--c_bg);
   color: var(--c_p);
@@ -251,16 +252,185 @@
   justify-content: center;
   align-items: center;
 }
-.con_2 input {
+.num_choice input {
   border: 1px solid #000;
   border-radius: 5px;
   outline: none;
-  width: 90px;
+  width: 70px;
   height: 30px;
 }
 
+/* con_3 */
+.con_3 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+.con_3 > div > h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 1rem 0;
+}
+.res_person,
+.res_group {
+  width: 50%;
+  padding: 1rem;
+}
+.con_3 > div > ul > li {
+  padding: 0.3rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.con_3 > div > ul > li > label {
+  width: 25%;
+  font-size: 0.875rem;
+}
+.con_3 > div > ul > li > input {
+  border: 1px solid black;
+  display: block;
+  outline: none;
+  height: 25px;
+  width: 240px;
+}
+.res_person .ref {
+  margin: 0;
+  font-size: 0.625rem;
+}
+.ref {
+  line-height: 1.6;
+  font-size: 0.625rem;
+}
+.ref em {
+  color: rgb(255, 0, 0);
+}
+input#group_leader {
+  width: 1rem;
+  margin: 0.5rem;
+}
+input#group_age {
+  width: 80px;
+}
+input#group_etc {
+  height: 155px;
+}
+.p_con {
+  width: 100%;
+  padding: 1rem;
+}
+.p_con h4 {
+  font-size: 1.25rem;
+}
+.p_con .big_p {
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+.p_con .small_p {
+  font-size: 0.75rem;
+  padding: 0.2rem;
+  padding-left: 1rem;
+  line-height: 1.6;
+}
+.p_con .small_p em {
+  color: rgb(255, 0, 0);
+}
+input.ref_check {
+  margin: 0.5rem;
+}
+.p_con .ref_check {
+  font-size: 0.75rem;
+  color: rgb(255, 0, 0);
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000020;
+  z-index: 900;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.popup.on {
+  display: flex;
+}
+.modal {
+  min-width: 241px;
+  background-color: var(--c_bg);
+  background-image: url(../images/modal.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 47%;
+  height: 47%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.modal p {
+  background-origin: auto;
+  font-size: 2rem;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.modal p:first-child {
+  padding-top: 3rem;
+  position: relative;
+}
+.modal p:first-child::after {
+  content: '';
+  position: absolute;
+  bottom: 30px;
+  width: 70%;
+  height: 1px;
+  background-color: var(--c_bg);
+}
+.modal p:nth-child(2) {
+  align-items: center;
+}
+.modal p:last-child {
+  padding-bottom: 2rem;
+}
+.modal span {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.modal input {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 0.5rem 3rem;
+  background-color: var(--c_bg);
+  color: var(--c_p);
+  font-size: 1.25rem;
+}
 /* 반응형 */
-@media (max-width: 1000px) {
+@media (max-width: 1020px) {
+  .res_person,
+  .res_group {
+    /* max-width: 500px; */
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px dotted var(--c_grey);
+  }
+  .modal {
+    border-radius: 10px;
+  }
+  .modal p:first-child {
+    font-size: 1.5rem;
+  }
+  .modal p:first-child::after {
+    width: 80%;
+  }
 }
 @media (max-width: 760px) {
   .sec1 h2 {
@@ -279,6 +449,9 @@
     left: 33px;
     height: 0.7rem;
   }
+  .cal {
+    border-bottom: 1px dotted var(--c_grey);
+  }
   .cal,
   .time {
     width: 100%;
@@ -294,6 +467,22 @@
   }
   .con_1 > button > span {
     padding: 0.5rem 0.8rem;
+  }
+  .con_3 > div > ul > li > label {
+    width: 40%;
+  }
+  .modal {
+    height: 40%;
+  }
+  .modal p:first-child {
+    font-size: 1.2rem;
+    padding-top: 1rem;
+  }
+  .modal p:last-child {
+    padding-bottom: 1rem;
+  }
+  .modal input {
+    padding: 0.5rem 2rem;
   }
 }
 @media (max-width: 560px) {
@@ -311,10 +500,51 @@
     left: 26.61px;
     height: 0.4;
   }
+  .con_3 > div > ul > li > label {
+    font-size: 0.8rem;
+  }
+  .con_3 > div > ul > li > input {
+    width: 160px;
+  }
+  .modal {
+    height: 30%;
+    border: 3px solid var(--c_bg);
+  }
+  .modal p:first-child {
+    font-size: 1rem;
+    padding-top: 0;
+  }
+  .modal p:first-child::after {
+    width: 70%;
+    bottom: 20px;
+  }
+  .modal p:last-child {
+    padding-bottom: 0;
+  }
+}
+.modal span {
+  font-size: 0.8rem;
+}
+.modal input {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
 }
 @media (max-width: 420px) {
   .btns button {
     font-size: 0.6rem;
     padding: 0.2rem 0.5rem;
+  }
+  .con_3 > div > ul > li {
+    justify-content: space-between;
+    border-bottom: 1px dotted var(--c_grey);
+  }
+  .con_3 > div > ul > li > label {
+    font-size: 0.6rem;
+  }
+  .con_3 > div > ul > li > input {
+    width: 160px;
+  }
+  input#group_age {
+    width: 60px;
   }
 }

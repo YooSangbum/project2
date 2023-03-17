@@ -30,7 +30,7 @@
   font-family: 'IBM Plex Sans', sans-serif;
   position: relative;
   max-width: 300px;
-  min-width: 275px;
+  min-width: 255px;
   background: var(--c_p);
   color: var(--c_bg);
   margin: 1rem auto;
