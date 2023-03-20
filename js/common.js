@@ -125,7 +125,7 @@ function displayItems(items) {
   if (weatherReady == 'clear') {
     iconImg = 'clear';
   } else if (
-    weatherReady == 'partly cloudy' ||
+    weatherReady == 'pcloudy' ||
     weatherReady == 'cloudy' ||
     weatherReady == 'very cloudy'
   ) {

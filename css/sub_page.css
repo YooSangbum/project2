@@ -77,10 +77,22 @@
   color: #000;
   font-size: 1.25rem;
   background-color: var(--c_p);
+  cursor: pointer;
 }
 .btns button.on {
   background-color: var(--c_bg);
   color: var(--c_p);
+}
+.form {
+  display: none;
+}
+.form > p {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 2rem 0;
+}
+.form.on {
+  display: block;
 }
 
 /* 개인 / 단체 선택 */
@@ -114,6 +126,15 @@
 /* 예약과정 ul > li > h3,.con */
 .proc {
   margin-bottom: 3rem;
+  display: none;
+}
+.proc.on {
+  display: block;
+}
+.proc > p {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 2rem;
 }
 .choice {
   overflow: hidden;
@@ -138,7 +159,7 @@
   border: 1px solid var(--c_bg);
 }
 .title.on + .con {
-  max-height: 1080px;
+  max-height: 1500px;
   /* height: 1080px; */
 }
 /* 예약과정 전체부분 끝 */
@@ -282,6 +303,7 @@
   width: 100%;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 .con_3 > div > ul > li > label {
   width: 25%;
@@ -293,6 +315,14 @@
   outline: none;
   height: 25px;
   width: 240px;
+}
+.res_name_error,
+.res_call_error,
+.res_email_error {
+  font-size: 0.6rem;
+  color: red;
+  width: 100%;
+  text-align: center;
 }
 .res_person .ref {
   margin: 0;

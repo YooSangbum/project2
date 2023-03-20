@@ -75,13 +75,16 @@
             <button>봉사활동예약</button>
           </div>
         </section>
-        <form action="./complet.html">
+        <form class="form on" action="./complet.html">
           <section class="sec2 mw3">
             <div class="select">
               <input type="button" value="개인" />
               <input class="on" type="button" value="단체" />
             </div>
             <ul class="proc">
+              <p>개인 예약과정이 열립니다.</p>
+            </ul>
+            <ul class="proc on">
               <li class="choice choice_1">
                 <h3 class="title on">1. 날짜 및 회차 선택</h3>
                 <div class="con con_1">
@@ -203,14 +206,20 @@
                       <li>
                         <label for="res_name">예약자명</label>
                         <input type="text" name="res_name" id="res_name" />
+                        <span class="res_name_error"></span>
                       </li>
                       <li>
                         <label for="res_call">연락처(휴대전화)</label>
                         <input type="tel" name="res_call" id="res_call" />
+                        <span class="res_call_error"></span>
                       </li>
                       <li>
                         <label for="res_email">이메일</label>
-                        <input type="email" name="res_email" id="res_email" />
+                        <input
+                          type="email"
+                          name="res_email"
+                          id="res_email"
+                        /><span class="res_email_error"></span>
                       </li>
                       <li>
                         <label for="res_password">비밀번호</label>
@@ -317,6 +326,14 @@
             </div>
           </div>
         </form>
+        <form class="form" action="">
+          <p>특별프로그램예약이 나타납니다.</p>
+        </form>
+        <form class="form" action="">
+          <p>전시해설예약이 나타납니다</p>
+          .
+        </form>
+        <form class="form" action=""><p>봉사활동예약이 나타납니다.</p></form>
       </main>
       <footer>
         <div class="footer_wrap">
