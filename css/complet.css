@@ -1,0 +1,82 @@
+:root {
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  --mw: 1440px;
+  --c_point1: #ffad22;
+  --c_point2: #ffe72b;
+  --c_bg: #00224a;
+  --c_footer_bg: #284372;
+  --c_grey: #c7c7c7;
+  --c_grey1: #ebe3db;
+  --c_p: #fefffd;
+}
+
+.sec2 h3 {
+  padding: 2em 0;
+}
+.sec2 h3 p {
+  padding: 1rem;
+  font-size: 2.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.sec2 h3 p:nth-child(1) {
+  font-weight: bold;
+}
+.sec2 h3 p:nth-child(3) {
+  padding: 2rem 0;
+  font-size: 1rem;
+}
+.sec2 > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sec2 > div > a {
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
+  background-color: var(--c_bg);
+  color: var(--c_p);
+  padding: 0.5rem 1rem;
+  margin: 1rem 1rem;
+  margin-bottom: 4rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 반응형 */
+@media (max-width: 1020px) {
+}
+@media (max-width: 760px) {
+  .sec2 h3 p {
+    font-size: 1.5rem;
+  }
+  .sec2 h3 p:nth-child(3) {
+    font-size: 0.8rem;
+  }
+  .sec2 > div > a {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 560px) {
+  .sec2 h3 p {
+    font-size: 1rem;
+  }
+  .sec2 > div > a {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 420px) {
+  .sec2 h3 p {
+    font-size: 0.8rem;
+  }
+  .sec2 h3 p:nth-child(3) {
+    font-size: 0.6rem;
+  }
+  .sec2 > div > a {
+    font-size: 0.6rem;
+  }
+}

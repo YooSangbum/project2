@@ -23,7 +23,7 @@
 
     <script src="./js/header.js" defer></script>
     <script src="./js/calendar.js" defer></script>
-    <script src="./sub_page.js" defer></script>
+    <script src="./js/sub_page.js" defer></script>
   </head>
   <body>
     <div class="wrap">
@@ -75,7 +75,7 @@
             <button>봉사활동예약</button>
           </div>
         </section>
-        <form action="">
+        <form action="./complet.html">
           <section class="sec2 mw3">
             <div class="select">
               <input type="button" value="개인" />
@@ -149,7 +149,7 @@
                 </div>
               </li>
               <li class="choice choice_2">
-                <h3 class="title on">2. 인원 선택</h3>
+                <h3 class="title">2. 인원 선택</h3>
                 <div class="con con_2">
                   <ul>
                     <h4>단체 관람 예약시 주의사항</h4>
@@ -195,7 +195,7 @@
                 </div>
               </li>
               <li class="choice choice_3">
-                <h3 class="title on">3. 예약자 및 단체정보 입력</h3>
+                <h3 class="title">3. 예약자 및 단체정보 입력</h3>
                 <div class="con con_3">
                   <div class="res_person">
                     <h4>예약자 정보</h4>
@@ -256,19 +256,14 @@
                         /><span class="ref">세 (평균연령)</span>
                       </li>
                       <li>
-                        <label for="group_leader">인솔자</label>
+                        <label for="gl">인솔자</label>
                         <input
                           type="radio"
-                          name="group_leader"
-                          id="group_leader"
+                          name="gl"
+                          id="gl1"
                           value="있음"
                         /><span class="ref">있음</span>
-                        <input
-                          type="radio"
-                          name="group_leader"
-                          id="group_leader"
-                          value="없음"
-                        />
+                        <input type="radio" name="gl" id="gl2" value="없음" />
                         <span class="ref">없음</span>
                       </li>
                       <li>
@@ -309,7 +304,7 @@
               </li>
             </ul>
           </section>
-          <div class="popup on">
+          <div class="popup">
             <div class="modal">
               <p>예약 신청 되었습니다.</p>
               <p>

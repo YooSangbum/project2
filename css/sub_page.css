@@ -138,7 +138,7 @@
   border: 1px solid var(--c_bg);
 }
 .title.on + .con {
-  max-height: 1500px;
+  max-height: 1080px;
   /* height: 1080px; */
 }
 /* 예약과정 전체부분 끝 */
@@ -151,7 +151,7 @@
   /* max-width: 960px; */
   /* width: calc(100% - 2rem); */
   /* margin: auto; */
-  padding: 2rem;
+  /* padding: 2rem; */
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -265,7 +265,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 .con_3 > div > h4 {
   font-size: 1.25rem;
@@ -305,7 +305,8 @@
 .ref em {
   color: rgb(255, 0, 0);
 }
-input#group_leader {
+input#gl1,
+input#gl2 {
   width: 1rem;
   margin: 0.5rem;
 }
