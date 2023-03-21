@@ -103,6 +103,112 @@ $btns.forEach((item, i) => {
 });
 
 /* 날씨정보 */
+
+// |이 코드는 API를 통해 날씨 정보를 가져와서 해당 정보를 화면에 출력하는 기능을 수행합니다.
+// |
+// |좋은 점:
+// |- fetch API를 사용하여 비동기적으로 데이터를 가져오고 있습니다.
+// |- Promise를 사용하여 데이터를 가져오고 나서 화면에 출력하는 displayItems 함수를 호출하고 있습니다.
+// |- 날씨 정보를 받아와서 해당하는 이미지를 출력하는 부분이 깔끔하게 구현되어 있습니다.
+// |
+// |나쁜 점:
+// |- API 주소가 하드코딩되어 있어서, 만약 API 주소가 변경되면 코드를 수정해야 합니다.
+// |- 날짜 정보를 가져오는 부분에서 월(month)을 가져올 때 +1을 해주는데, 이 부분이 왜 필요한지 주석으로 설명이 없어서 코드를 이해하는 데 어려움이 있을 수 있습니다.
+// |- 날씨 정보를 출력하는 부분에서, 날씨 상태(weatherReady)에 따라서 이미지를 출력하는 부분이 길고 복잡합니다. 이 부분을 함수로 분리하거나, 객체를 사용하여 간단하게 구현할 수 있을 것입니다.
+
+/* 선생님 피드백 및 ai */
+
+// const loadItems = () => {
+//   return fetch(
+//     'https://www.7timer.info/bin/api.pl?lon=127.378&lat=36.349&product=civillight&output=json'
+//   )
+//     .then((data) => data.json())
+//     .then((json) => json.dataseries);
+// };
+
+// const today = new Date();
+// const year = today.getFullYear();
+// const month = today.getMonth() + 1;
+// const day = today.getDate();
+
+// const displayItems = (items) => {
+//   const con = document.querySelector('.weather_wrap');
+//   const info = items[0];
+//   const weatherReady = info.weather;
+//   let iconImg = '';
+
+/************************************************************ */
+
+// switch (weatherReady) {
+//   case 'clear':
+//     iconImg = 'clear';
+//     break;
+//   case 'pcloudy':
+//   case 'cloudy':
+//   case 'very cloudy':
+//     iconImg = 'cloudy';
+//     break;
+//   case 'light rain or showers':
+//   case 'occasional showers':
+//   case 'isolated showers':
+//   case 'rain':
+//     iconImg = 'rain';
+//     break;
+//   case 'light or occasional snow':
+//   case 'snow':
+//   case 'mixed':
+//     iconImg = 'snow';
+//     break;
+//   case 'thunderstorm possible':
+//     iconImg = 'thunderstorm possible';
+//     break;
+//   case 'thunderstorm':
+//     iconImg = 'thunderstorm';
+//     break;
+//   case 'foggy':
+//   case 'windy':
+//     iconImg = 'foggy';
+//     break;
+// }
+
+/************************************************************ */
+
+// const weatherIcons = {
+//   clear: "clear",
+//   pcloudy: "cloudy",
+//   cloudy: "cloudy",
+//   "very cloudy": "cloudy",
+//   "light rain or showers": "rain",
+//   "occasional showers": "rain",
+//   "isolated showers": "rain",
+//   rain: "rain",
+//   "light or occasional snow": "snow",
+//   snow: "snow",
+//   mixed: "snow",
+//   "thunderstorm possible": "thunderstorm possible",
+//   thunderstorm: "thunderstorm",
+//   foggy: "foggy",
+//   windy: "foggy",
+// };
+
+// iconImg = weatherIcons[weatherReady];
+
+/************************************************************ */
+
+//   con.innerHTML = `
+//     <div class="img_wrap">
+//       <p>${year}년 ${month}월 ${day}일</p>
+//       <img src="./images/${iconImg}.png" alt=" ${iconImg}" />
+//     </div>
+//     <div class="p_wrap">
+//       <p>최저온도: ${info.temp2m.min}</p>
+//       <p>최고온도: ${info.temp2m.max}</p>
+//     </div>
+//       `;
+// };
+
+// loadItems().then(displayItems).catch(console.log);
+
 function loadItems() {
   return fetch(
     'https://www.7timer.info/bin/api.pl?lon=127.378&lat=36.349&product=civillight&output=json'

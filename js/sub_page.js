@@ -91,25 +91,29 @@ res_name.addEventListener('input', function () {
   }
 });
 
+// res_call 요소에 input 이벤트를 추가합니다.
 res_call.addEventListener('input', function () {
+  // res_call 요소의 값을 가져와 t_value 변수에 저장합니다.
   let t_value = res_call.value;
+  // 전화번호 정규식을 저장한 reg 변수를 선언합니다.
   const reg = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+  // 만약 t_value 값이 전화번호 정규식과 일치하지 않으면
   if (!reg.test(t_value)) {
+    // res_call_error 요소에 숫자만 입력해주세요 메시지를 출력합니다.
     res_call_error.innerHTML = `숫자만 입력해주세요`;
   } else {
+    // 그렇지 않으면 res_call_error 요소를 비웁니다.
     res_call_error.innerHTML = '';
   }
 });
 
-res_email.addEventListener('change', function () {
+res_email.addEventListener('change', () => {
   let t_value = res_email.value;
   const reg =
     /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
-  if (!reg.test(t_value)) {
-    res_email_error.innerHTML = `형식에 맞는 이메일을 입력해주세요`;
-  } else {
-    res_email_error.innerHTML = '';
-  }
+  reg.test(t_value)
+    ? (res_email_error.innerHTML = '')
+    : (res_email_error.innerHTML = `형식에 맞는 이메일을 입력해주세요`);
 });
 
 const PREF_LIST = [

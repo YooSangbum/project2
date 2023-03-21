@@ -81,10 +81,17 @@ function CalendarControl() {
           calendarControl.calMonthName[calendar.getMonth()]
         } ${calendar.getFullYear()}`
       );
-      // document.querySelectorAll('.number-item').forEach((day) => {
-      //   day.classList.add('on');
-      //   this.parentNode.classList.add('on');
-      // });
+      // 선생님 피드백
+      document.querySelector(
+        '.cal_choiced'
+      ).innerHTML = `${calendar.getFullYear()}년 ${
+        calendarControl.calMonthName[calendar.getMonth()]
+      }월  ${e.target.textContent}일 `;
+
+      document.querySelectorAll('.number-item').forEach((day) => {
+        day.classList.remove('on');
+        this.parentNode.classList.add('on');
+      });
     },
     plotSelectors: function () {
       document.querySelector('.calendar').innerHTML += `
@@ -243,19 +250,3 @@ function CalendarControl() {
 }
 
 const calendarControl = new CalendarControl();
-
-const $chooseItem = document.querySelectorAll('.number-item');
-$chooseItem.forEach((item) => {
-  item.addEventListener('click', (e) => {
-    const eTarget = e.target.parentNode;
-    console.log(eTarget);
-    if (eTarget.classList.contains('on') == false) {
-      $chooseItem.forEach((a) => {
-        a.classList.remove('on');
-      });
-      eTarget.classList.toggle('on');
-    } else {
-      eTarget.classList.remove('on');
-    }
-  });
-});
