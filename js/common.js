@@ -1,6 +1,6 @@
-const $mobile = document.querySelector('.mobile');
-const $gnb = document.querySelector('.gnb');
-const $ham = document.querySelector('.ham');
+const $mobile = document.querySelector(".mobile");
+const $gnb = document.querySelector(".gnb");
+const $ham = document.querySelector(".ham");
 const gnb = `
             <li>
               <a href="#">천문대 소개</a>
@@ -52,31 +52,31 @@ const gnb = `
 $mobile.innerHTML = gnb;
 $gnb.innerHTML = gnb;
 
-$ham.addEventListener('click', () => {
-  $mobile.classList.toggle('on');
-  $ham.classList.toggle('on');
+$ham.addEventListener("click", () => {
+  $mobile.classList.toggle("on");
+  $ham.classList.toggle("on");
 });
 
 /* mobile 서브메뉴 등장 */
-const $listMenu = document.querySelectorAll('.mobile > li > a');
+const $listMenu = document.querySelectorAll(".mobile > li > a");
 
 $listMenu.forEach((btn) => {
-  btn.addEventListener('click', function (e) {
+  btn.addEventListener("click", function (e) {
     e.preventDefault();
     let eTarget = e.target;
-    if (!eTarget.classList.contains('active')) {
+    if (!eTarget.classList.contains("active")) {
       $listMenu.forEach((a) => {
-        a.classList.remove('active');
+        a.classList.remove("active");
       });
-      eTarget.classList.add('active');
+      eTarget.classList.add("active");
     } else {
-      eTarget.classList.remove('active');
+      eTarget.classList.remove("active");
     }
   });
 });
 
 /* 팝업존 스와이퍼 */
-var swiper = new Swiper('.popup_zone', {
+var swiper = new Swiper(".popup_zone", {
   spaceBetween: 30,
   centeredSlides: true,
   autoplay: {
@@ -87,18 +87,18 @@ var swiper = new Swiper('.popup_zone', {
 });
 
 /* 시설안내 */
-const $btns = document.querySelectorAll('.FI_btns button');
-const $imgs = document.querySelector('.imgs');
+const $btns = document.querySelectorAll(".FI_btns button");
+const $imgs = document.querySelector(".imgs");
 
 $btns.forEach((item, i) => {
-  item.addEventListener('click', () => {
+  item.addEventListener("click", () => {
     $imgs.innerHTML = `
       <img src="./images/image${i + 1}.jpg" alt="" />
       <a href="#"></a>`;
     $btns.forEach((a) => {
-      a.classList.remove('on');
+      a.classList.remove("on");
     });
-    $btns[i].classList.add('on');
+    $btns[i].classList.add("on");
   });
 });
 
@@ -211,7 +211,7 @@ $btns.forEach((item, i) => {
 
 function loadItems() {
   return fetch(
-    'https://www.7timer.info/bin/api.pl?lon=127.378&lat=36.349&product=civillight&output=json'
+    "https://www.7timer.info/bin/api.pl?lon=127.378&lat=36.349&product=civillight&output=json"
   ) //
     .then((data) => data.json())
     .then((json) => json.dataseries);
@@ -223,38 +223,38 @@ let month = today.getMonth() + 1;
 let day = today.getDate();
 
 function displayItems(items) {
-  const con = document.querySelector('.weather_wrap');
+  const con = document.querySelector(".weather_wrap");
   const info = items[0];
   let weatherReady = info.weather;
-  let iconImg = '';
+  let iconImg = "";
 
-  if (weatherReady == 'clear') {
-    iconImg = 'clear';
+  if (weatherReady == "clear") {
+    iconImg = "clear";
   } else if (
-    weatherReady == 'pcloudy' ||
-    weatherReady == 'cloudy' ||
-    weatherReady == 'very cloudy'
+    weatherReady == "pcloudy" ||
+    weatherReady == "cloudy" ||
+    weatherReady == "very cloudy"
   ) {
-    iconImg = 'cloudy';
+    iconImg = "cloudy";
   } else if (
-    weatherReady == 'light rain or showers' ||
-    weatherReady == 'occasional showers' ||
-    weatherReady == 'isolated showers' ||
-    weatherReady == 'rain'
+    weatherReady == "light rain or showers" ||
+    weatherReady == "occasional showers" ||
+    weatherReady == "isolated showers" ||
+    weatherReady == "rain"
   ) {
-    iconImg = 'rain';
+    iconImg = "rain";
   } else if (
-    weatherReady == 'light or occasional snow' ||
-    weatherReady == 'snow' ||
-    weatherReady == 'mixed'
+    weatherReady == "light or occasional snow" ||
+    weatherReady == "snow" ||
+    weatherReady == "mixed"
   ) {
-    iconImg = 'snow';
-  } else if (weatherReady == 'thunderstorm possible') {
-    iconImg = 'thunderstorm possible';
-  } else if (weatherReady == 'thunderstorm') {
-    iconImg = 'thunderstorm';
-  } else if (weatherReady == 'foggy' || weatherReady == 'widny') {
-    iconImg = 'foggy';
+    iconImg = "snow";
+  } else if (weatherReady == "thunderstorm possible") {
+    iconImg = "thunderstorm possible";
+  } else if (weatherReady == "thunderstorm") {
+    iconImg = "thunderstorm";
+  } else if (weatherReady == "foggy" || weatherReady == "widny") {
+    iconImg = "foggy";
   }
 
   con.innerHTML = `
@@ -276,11 +276,11 @@ loadItems() //
   .catch(console.log);
 
 /* 메인문구 타이핑 효과 */
-const content = `도심, 속에서, 만나는, <em>별</em>,과, <em>낭만</em>,의, 하늘, 놀이터,<br />,
+const content = `도,심, 속,에,서, 만,나,는, <em>별</em>,과, <em>낭만</em>,의, 하,늘, 놀,이,터,<br />,
   ,<strong>대전시민천문대</strong>`;
-const text = document.querySelector('h2 > span');
+const text = document.querySelector("h2 > span");
 
-const letter = content.split(',');
+const letter = content.split(",");
 // console.log(letter);
 let i = 0;
 
@@ -291,4 +291,4 @@ function typing() {
     i++;
   }
 }
-setInterval(typing, 1000);
+setInterval(typing, 300);
