@@ -274,3 +274,21 @@ loadItems() //
     displayItems(items);
   })
   .catch(console.log);
+
+/* 메인문구 타이핑 효과 */
+const content = `도심, 속에서, 만나는, <em>별</em>,과, <em>낭만</em>,의, 하늘, 놀이터,<br />,
+  ,<strong>대전시민천문대</strong>`;
+const text = document.querySelector('h2 > span');
+
+const letter = content.split(',');
+// console.log(letter);
+let i = 0;
+
+function typing() {
+  if (i < letter.length) {
+    let txt = letter[i];
+    text.innerHTML += txt;
+    i++;
+  }
+}
+setInterval(typing, 1000);
