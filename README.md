@@ -1,4 +1,4 @@
-# <img src=https://yoosangbum.github.io/project2/images/logo_white.png width="200px">
+# <img src=https://yoosangbum.github.io/project2/images/logo.png width="200px">
 
 ## 대전시민천문대\_리뉴얼
 
