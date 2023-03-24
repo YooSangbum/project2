@@ -62,7 +62,7 @@
 
 ## <img src=https://raw.githubusercontent.com/YooSangbum/project2/master/readme_images/%EC%95%BD%EC%8B%9D%EA%B8%B0%ED%9A%8D%EC%84%9C.png width=600px>
 
-### 메인, 서브, 모바일 - 시안 or 화면 설게 와이어프레임 (링크)
+### 메인, 서브, 모바일 - 시안 or 화면 설계 와이어프레임 (링크)
 
 #### 와이어프레임
 
