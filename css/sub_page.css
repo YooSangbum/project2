@@ -443,6 +443,7 @@ input.ref_check {
   background-color: var(--c_bg);
   color: var(--c_p);
   font-size: 1.25rem;
+  cursor: pointer;
 }
 /* 반응형 */
 @media (max-width: 1020px) {

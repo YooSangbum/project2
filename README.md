@@ -1,6 +1,13 @@
-# <img src=https://raw.githubusercontent.com/YooSangbum/project2/master/readme_images/logo.png width="200px">
+<img src=https://raw.githubusercontent.com/YooSangbum/project2/master/readme_images/logo.png width="200px">
 
 ## 대전시민천문대\_리뉴얼
+
+---
+
+> ### PC 반응형
+>
+> <img src=https://user-images.githubusercontent.com/124753255/227927037-d6a86cd3-3269-426e-b27a-c6bbb995b170.jpg width=300 >
+> 프로젝트2_대전시민천문대 <a href="https://yoosangbum.github.io/project2/"> ACTIVE 클릭!!</a>
 
 ---
 
@@ -42,9 +49,11 @@
 
 ---
 
-### 프로젝트 구현 영상
+### 예약페이지 과정
 
-> <img scr=>
+> ![PCPLAY](https://user-images.githubusercontent.com/124753255/227924840-263fdda8-608f-439e-beab-34a7b7b10431.gif)
+
+---
 
 ### 프로젝트 구현 기능
 
@@ -52,9 +61,9 @@
 2. index 시설안내 탭메뉴
 3. index 날씨 API 사용하여 당일 날짜, 당일최고기온, 당일날씨에 맞는 문구와 아이콘 생성
 4. 예약과정페이지 탭메뉴 생성
-5. calender 기능 사용(기존 코드 css 및 js 소폭 수정)
-6. 아코디언형태의 슬라이드섹션구성
-7. input 정규식 표현 사용
+5. 예약과정페이지 calender 기능 사용(기존 코드 css 및 js 소폭 수정)
+6. 예약과정페이지 아코디언형태의 슬라이드섹션구성
+7. 예약과정페이지 input 정규식 표현 사용
 
 ---
 
@@ -62,20 +71,25 @@
 
 ### 약식 기획서 요약 (링크)
 
-> https://docs.google.com/presentation/d/1bEJqM46Jnwgy5yNej3MkmMPzvlmkLFyG6pfiKcyzYjM/edit#slide=id.p
+> <a href="https://docs.google.com/presentation/d/1bEJqM46Jnwgy5yNej3MkmMPzvlmkLFyG6pfiKcyzYjM/edit#slide=id.p"> 구글PPT 약식 기획서</a>
 
 ## <img src=https://raw.githubusercontent.com/YooSangbum/project2/master/readme_images/%EC%95%BD%EC%8B%9D%EA%B8%B0%ED%9A%8D%EC%84%9C.png width=600px>
+
+---
 
 ### 메인, 서브, 모바일 - 시안 or 화면 설계 와이어프레임 (링크)
 
 #### 와이어프레임
 
-> https://www.figma.com/file/ZAuDaxbOQegx78n7yCO6Jw/%EB%8C%80%EC%A0%84%EC%8B%9C%EB%AF%BC%EC%B2%9C%EB%AC%B8%EB%8C%80%EB%A6%AC%EB%89%B4%EC%96%BC?node-id=0%3A1&t=AIUncHEt5Iao7jCP-1
+> <a href="https://www.figma.com/file/08Fwz47BYtqVStn4yRhruQ/%EC%9C%A0%EC%83%81%EB%B2%94_%EB%8C%80%EC%A0%84%EC%B2%9C%EB%AC%B8%EB%8C%80?node-id=9%3A2&t=Rzch2RkTnsfySaWB-1">피그마 와이어프레임</a>
 
 #### 시안
 
-> https://www.figma.com/file/08Fwz47BYtqVStn4yRhruQ/%EC%9C%A0%EC%83%81%EB%B2%94_%EB%8C%80%EC%A0%84%EC%B2%9C%EB%AC%B8%EB%8C%80?node-id=0%3A1&t=XuaF1IY11Dhkl44J-1
+> <a href="https://www.figma.com/file/08Fwz47BYtqVStn4yRhruQ/%EC%9C%A0%EC%83%81%EB%B2%94_%EB%8C%80%EC%A0%84%EC%B2%9C%EB%AC%B8%EB%8C%80?node-id=0%3A1&t=XuaF1IY11Dhkl44J-1">피그마 시안</a>
+
+---
 
 #### 스타일가이드
 
-<img src=https://raw.githubusercontent.com/YooSangbum/project2/master/readme_images/styleguide.jpg>
+<img src=https://user-images.githubusercontent.com/124753255/227925338-24cd52a2-f5cb-4d6a-84a6-dfbf9aaaa519.jpg width=300 >
+<img src=https://user-images.githubusercontent.com/124753255/227925400-c8e45d4d-9bcf-433a-b052-800ebf5d56d1.jpg width=300 align="top">
