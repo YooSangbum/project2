@@ -42,6 +42,10 @@
 
 ---
 
+### 프로젝트 구현 영상
+
+> <img scr=>
+
 ### 프로젝트 구현 기능
 
 1. index 팝업존 슬라이드 구현
@@ -74,4 +78,4 @@
 
 #### 스타일가이드
 
-<img src=https://raw.githubusercontent.com/YooSangbum/project2/master/readme_images/styleguide.jpg width=200px>
+<img src=https://raw.githubusercontent.com/YooSangbum/project2/master/readme_images/styleguide.jpg>
