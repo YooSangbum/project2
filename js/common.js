@@ -277,7 +277,8 @@ loadItems() //
   .catch(console.log);
 
 /* 메인문구 타이핑 효과 */
-const content = `<span>도</span>,<span>심</span>, <span>속</span>,<span>에</span>,<span>서</span>, <span>만</span>,<span>나</span>,<span>는</span>, <em>별</em>,<span>과</span>, <em>낭만</em>,<span>의</span>, <span>하</span>,<span>늘</span>, <span>놀</span>,<span>이</span>,<span>터</span> `;
+const content = `<span>도</span>,<span>심</span>, <span>속</span>,<span>에</span>,<span>서</span>, <span>만</span>,<span>나</span>,<span>는</span>, <em>별</em>,<span>과</span>, <em>낭만</em>,<span>의</span>, <span>하</span>,<span>늘</span>, <span>놀</span>,<span>이</span>,<span>터</span>,<br/>
+<strong>대</strong>,<strong>전</strong>,<strong>시</strong>,<strong>민</strong>,<strong>천</strong>,<strong>문</strong>,<strong>대</strong> `;
 const text = document.querySelector('h2 > span');
 
 const letter = content.split(',');
@@ -292,45 +293,45 @@ function typing() {
 }
 setInterval(typing, 300);
 
-$(document).ready(function () {
-  var theLetters = '도심속에서만나는별과낭만의하늘놀이터대전시민천문대 '; //You can customize what letters it will cycle through
-  var ctnt = '대전시민천문대'; // Your text goes here
-  var speed = 150; // ms per frame
-  var increment = 5; // frames per step. Must be >2
+// $(document).ready(function () {
+//   // var theLetters = '도심속에서만나는별과낭만의하늘놀이터대전시민천문대 '; //You can customize what letters it will cycle through
+//   var ctnt = '대전시민천문대'; // Your text goes here
+//   var speed = 150; // ms per frame
+//   var increment = 5; // frames per step. Must be >2
 
-  var clen = ctnt.length;
-  var si = 0;
-  var stri = 0;
-  var block = '';
-  var fixed = '';
-  //Call self x times, whole function wrapped in setTimeout
-  (function rustle(i) {
-    setTimeout(function () {
-      if (--i) {
-        rustle(i);
-      }
-      nextFrame(i);
-      si = si + 1;
-    }, speed);
-  })(clen * increment + 1);
-  function nextFrame(pos) {
-    for (var i = 0; i < clen - stri; i++) {
-      //Random number
-      var num = Math.floor(theLetters.length * Math.random());
-      //Get random letter
-      var letter = theLetters.charAt(num);
-      block = block + letter;
-    }
-    if (si == increment - 1) {
-      stri++;
-    }
-    if (si == increment) {
-      // Add a letter;
-      // every speed*10 ms
-      fixed = fixed + ctnt.charAt(stri - 1);
-      si = 0;
-    }
-    $('#output').html(fixed + block);
-    block = '';
-  }
-});
+//   var clen = ctnt.length;
+//   var si = 0;
+//   var stri = 0;
+//   var block = '';
+//   var fixed = '';
+//   //Call self x times, whole function wrapped in setTimeout
+//   (function rustle(i) {
+//     setTimeout(function () {
+//       if (--i) {
+//         rustle(i);
+//       }
+//       nextFrame(i);
+//       si = si + 1;
+//     }, speed);
+//   })(clen * increment + 1);
+//   function nextFrame(pos) {
+//     for (var i = 0; i < clen - stri; i++) {
+//       //Random number
+//       var num = Math.floor(theLetters.length * Math.random());
+//       //Get random letter
+//       var letter = theLetters.charAt(num);
+//       block = block + letter;
+//     }
+//     if (si == increment - 1) {
+//       stri++;
+//     }
+//     if (si == increment) {
+//       // Add a letter;
+//       // every speed*10 ms
+//       fixed = fixed + ctnt.charAt(stri - 1);
+//       si = 0;
+//     }
+//     $('#output').html(fixed + block);
+//     block = '';
+//   }
+// });

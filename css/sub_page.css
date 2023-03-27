@@ -296,7 +296,7 @@
 .res_person,
 .res_group {
   width: 50%;
-  padding: 1rem;
+  padding: 2.5rem;
 }
 .con_3 > div > ul > li {
   padding: 0.3rem 0;
@@ -348,7 +348,7 @@ input#group_etc {
 }
 .p_con {
   width: 100%;
-  padding: 1rem;
+  padding: 2.5rem;
 }
 .p_con h4 {
   font-size: 1.25rem;
@@ -450,8 +450,11 @@ input.ref_check {
   .res_group {
     /* max-width: 500px; */
     width: 100%;
-    padding: 1rem;
+    padding: 2rem;
     border-bottom: 1px dotted var(--c_grey);
+  }
+  .p_con {
+    padding: 2rem;
   }
   .modal {
     border-radius: 10px;
@@ -502,6 +505,17 @@ input.ref_check {
   .con_3 > div > ul > li > label {
     width: 40%;
   }
+  .res_person,
+  .res_group {
+    padding: 2rem;
+  }
+  #res_call {
+    font-size: 0.6rem;
+  }
+  .p_con {
+    width: 100%;
+    padding: 1rem;
+  }
   .modal {
     height: 40%;
   }
@@ -535,7 +549,7 @@ input.ref_check {
     font-size: 0.8rem;
   }
   .con_3 > div > ul > li > input {
-    width: 160px;
+    width: 180px;
   }
   .modal {
     height: 30%;
@@ -573,7 +587,7 @@ input.ref_check {
     font-size: 0.6rem;
   }
   .con_3 > div > ul > li > input {
-    width: 160px;
+    width: 140px;
   }
   input#group_age {
     width: 60px;
